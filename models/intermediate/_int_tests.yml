@@ -1,0 +1,80 @@
+version: 2
+
+models:
+  - name: int_patient_demographics
+    description: "Enriched patient data with state/region/age categorization"
+    columns:
+      - name: patient_id
+        data_tests:
+          - not_null
+          - unique
+      - name: age_group
+        data_tests:
+          - accepted_values:
+              values: ['Pediatric','Young Adult','Adult','Senior']
+
+  - name: int_provider_with_facility
+    description: "Provider data joined with specialty and facility"
+    columns:
+      - name: provider_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_encounter_full
+    description: "Encounter data with rolled-up diagnoses and procedures"
+    columns:
+      - name: encounter_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_claim_with_provider
+    description: "Claims joined with provider and plan details"
+    columns:
+      - name: claim_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_claim_financials
+    description: "Claims with aggregated payment and adjustment metrics"
+    columns:
+      - name: claim_id
+        data_tests:
+          - not_null
+          - unique
+      - name: payment_status_category
+        data_tests:
+          - accepted_values:
+              values: ['Fully Denied','Unpaid','Fully Paid','Partially Paid','Unknown']
+
+  - name: int_encounter_with_claim
+    description: "BRIDGE — joins clinical encounters with their financial claims"
+    columns:
+      - name: encounter_id
+        data_tests:
+          - not_null
+          - unique
+      - name: collection_status
+        data_tests:
+          - accepted_values:
+              values: ['No Claim Filed','Unpaid','Fully Collected','Partially Collected']
+
+  - name: int_payment_reconciliation
+    columns:
+      - name: payment_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: int_chronic_patients
+    columns:
+      - name: patient_id
+        data_tests:
+          - not_null
+          - unique
+      - name: chronic_category
+        data_tests:
+          - accepted_values:
+              values: ['Healthy','Single Chronic','Multi-Chronic','High Complexity']

@@ -1,0 +1,84 @@
+version: 2
+
+models:
+  - name: dim_payer
+    description: "Payer/insurance dimension"
+    columns:
+      - name: payer_key
+        data_tests:
+          - not_null
+          - unique
+      - name: plan_code
+        data_tests:
+          - not_null
+          - unique
+      - name: payer_segment
+        data_tests:
+          - accepted_values:
+              values: ['Government','Commercial','Patient']
+
+  - name: fct_claim
+    description: "Claim fact table — central financial fact"
+    columns:
+      - name: claim_key
+        data_tests:
+          - not_null
+          - unique
+      - name: claim_number
+        data_tests:
+          - not_null
+          - unique
+      - name: patient_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_patient')
+              field: patient_key
+      - name: provider_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_provider')
+              field: provider_key
+      - name: payer_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_payer')
+              field: payer_key
+      - name: total_charge_amount
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: aging_bucket
+        data_tests:
+          - accepted_values:
+              values: ['No Balance','0-30 days','31-60 days','61-90 days','91-120 days','120+ days']
+      - name: payment_status_category
+        data_tests:
+          - accepted_values:
+              values: ['Fully Denied','Unpaid','Fully Paid','Partially Paid','Unknown']
+
+  - name: fct_payment
+    description: "Payment fact table"
+    columns:
+      - name: payment_key
+        data_tests:
+          - not_null
+          - unique
+      - name: claim_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('fct_claim')
+              field: claim_key
+      - name: payment_amount
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: reconciliation_status
+        data_tests:
+          - accepted_values:
+              values: ['Zero Payment','Fully Paid','Overpayment','Underpaid Significantly','Partial Payment']

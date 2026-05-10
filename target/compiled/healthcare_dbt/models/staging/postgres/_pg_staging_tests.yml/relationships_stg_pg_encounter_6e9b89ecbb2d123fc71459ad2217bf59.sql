@@ -1,0 +1,25 @@
+
+    
+    
+
+with child as (
+    select encounter_id as from_field
+    from HEALTHCARE_DW.STAGING.stg_pg_encounter_diagnoses
+    where encounter_id is not null
+),
+
+parent as (
+    select encounter_id as to_field
+    from HEALTHCARE_DW.STAGING.stg_pg_encounters
+)
+
+select
+    from_field
+
+from child
+left join parent
+    on child.from_field = parent.to_field
+
+where parent.to_field is null
+
+

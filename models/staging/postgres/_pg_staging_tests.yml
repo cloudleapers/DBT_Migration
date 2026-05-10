@@ -1,0 +1,88 @@
+version: 2
+
+models:
+  - name: stg_pg_patients
+    description: "Cleaned patient master data from PostgreSQL"
+    columns:
+      - name: patient_id
+        description: "Unique patient identifier"
+        data_tests:
+          - not_null
+          - unique
+      - name: medical_record_number
+        description: "MRN — unique medical record number"
+        data_tests:
+          - not_null
+          - unique
+      - name: gender
+        data_tests:
+          - accepted_values:
+              values: ['M', 'F', 'O']
+      - name: age
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0 and age <= 120"
+
+  - name: stg_pg_providers
+    description: "Cleaned healthcare provider data"
+    columns:
+      - name: provider_id
+        data_tests:
+          - not_null
+          - unique
+      - name: npi_number
+        description: "National Provider Identifier"
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_pg_encounters
+    description: "Patient encounter/visit records"
+    columns:
+      - name: encounter_id
+        data_tests:
+          - not_null
+          - unique
+      - name: patient_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_pg_patients')
+              field: patient_id
+      - name: provider_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_pg_providers')
+              field: provider_id
+
+  - name: stg_pg_facilities
+    columns:
+      - name: facility_id
+        data_tests:
+          - not_null
+          - unique
+
+  - name: stg_pg_encounter_diagnoses
+    columns:
+      - name: diagnosis_id
+        data_tests:
+          - not_null
+          - unique
+      - name: encounter_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_pg_encounters')
+              field: encounter_id
+
+  - name: stg_pg_encounter_procedures
+    columns:
+      - name: procedure_id
+        data_tests:
+          - not_null
+          - unique
+      - name: encounter_id
+        data_tests:
+          - not_null

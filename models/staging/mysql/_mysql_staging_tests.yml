@@ -1,0 +1,82 @@
+version: 2
+
+models:
+  - name: stg_mysql_claims
+    description: "Cleaned claims data with derived metrics"
+    columns:
+      - name: claim_id
+        description: "Unique claim identifier"
+        data_tests:
+          - not_null
+          - unique
+      - name: claim_number
+        description: "Business claim number"
+        data_tests:
+          - not_null
+          - unique
+      - name: total_charge_amount
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+      - name: current_status_code
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['SUBMITTED','PENDING','IN_PROCESS','APPROVED','PAID','PARTIAL','DENIED','REJECTED','APPEALED','REVERSED','VOID','FORWARDED']
+
+  - name: stg_mysql_claim_lines
+    columns:
+      - name: claim_line_id
+        data_tests:
+          - not_null
+          - unique
+      - name: claim_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_mysql_claims')
+              field: claim_id
+
+  - name: stg_mysql_payments
+    columns:
+      - name: payment_id
+        data_tests:
+          - not_null
+          - unique
+      - name: claim_id
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_mysql_claims')
+              field: claim_id
+      - name: payment_amount
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+  - name: stg_mysql_adjustments
+    columns:
+      - name: adjustment_id
+        data_tests:
+          - not_null
+          - unique
+      - name: claim_id
+        data_tests:
+          - not_null
+
+  - name: stg_mysql_insurance_plans
+    columns:
+      - name: plan_id
+        data_tests:
+          - not_null
+          - unique
+      - name: plan_code
+        data_tests:
+          - not_null
+          - unique
+      - name: deductible_tier
+        data_tests:
+          - accepted_values:
+              values: ['No Deductible','Low Deductible','Medium Deductible','High Deductible']

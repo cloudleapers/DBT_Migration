@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "mysql-33f71a11-gcs7788-494a.k.aivencloud.com",
+            "port": 13034,
+            "driver": "MySQL",
+            "name": "Aiven MySQL - Claims Source",
+            "database": "defaultdb",
+            "username": "avnadmin",
+            "password": "AVNS_6wCnATrLYCENy4lV6PG"
+        }
+    ]
+}

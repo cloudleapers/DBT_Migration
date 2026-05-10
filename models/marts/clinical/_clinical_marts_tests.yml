@@ -1,0 +1,106 @@
+version: 2
+
+models:
+  - name: dim_patient
+    description: "Patient dimension — final analytics-ready patient master"
+    columns:
+      - name: patient_key
+        description: "Primary key for patient dimension"
+        data_tests:
+          - not_null
+          - unique
+      - name: medical_record_number
+        data_tests:
+          - not_null
+          - unique
+      - name: chronic_category
+        data_tests:
+          - not_null
+      - name: age_group
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: ['Pediatric','Young Adult','Adult','Senior']
+
+  - name: dim_provider
+    description: "Provider dimension"
+    columns:
+      - name: provider_key
+        data_tests:
+          - not_null
+          - unique
+      - name: npi_number
+        data_tests:
+          - not_null
+          - unique
+      - name: experience_level
+        data_tests:
+          - accepted_values:
+              values: ['Junior','Mid-Level','Senior']
+
+  - name: dim_facility
+    columns:
+      - name: facility_key
+        data_tests:
+          - not_null
+          - unique
+      - name: facility_size
+        data_tests:
+          - accepted_values:
+              values: ['Outpatient Only','Small','Medium','Large']
+
+  - name: dim_diagnosis
+    columns:
+      - name: diagnosis_key
+        data_tests:
+          - not_null
+          - unique
+      - name: risk_category
+        data_tests:
+          - accepted_values:
+              values: ['High Risk','Behavioral','Low Acuity','Standard']
+
+  - name: dim_procedure
+    columns:
+      - name: procedure_key
+        data_tests:
+          - not_null
+          - unique
+      - name: cost_tier
+        data_tests:
+          - accepted_values:
+              values: ['High Cost','Medium Cost','Low Cost']
+
+  - name: dim_date
+    description: "Date dimension — 10 years of calendar"
+    columns:
+      - name: date_key
+        data_tests:
+          - not_null
+          - unique
+
+  - name: fct_encounter
+    description: "Encounter fact table"
+    columns:
+      - name: encounter_key
+        data_tests:
+          - not_null
+          - unique
+      - name: patient_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_patient')
+              field: patient_key
+      - name: provider_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_provider')
+              field: provider_key
+      - name: facility_key
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('dim_facility')
+              field: facility_key

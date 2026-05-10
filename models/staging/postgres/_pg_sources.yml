@@ -1,0 +1,27 @@
+ersion: 2
+
+sources:
+  - name: pg_clinical
+    description: "Clinical data from Supabase PostgreSQL"
+    database: HEALTHCARE_DW
+    schema: RAW
+
+    tables:
+      - name: pg_icd10_codes
+      - name: pg_cpt_codes
+      - name: pg_specialty_types
+      - name: pg_states
+      - name: pg_facility_types
+      - name: pg_facilities
+      - name: pg_providers
+      - name: pg_patients
+      - name: pg_insurance_carriers
+      - name: pg_employees
+      - name: pg_encounters
+      - name: pg_encounter_diagnoses
+      - name: pg_encounter_procedures
+      - name: pg_prescriptions
+      - name: pg_lab_orders
+      - name: pg_lab_results
+      - name: pg_vitals
+      - name: pg_allergies

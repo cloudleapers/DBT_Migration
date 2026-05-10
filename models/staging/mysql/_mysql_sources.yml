@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: mysql_claims
+    description: "Claims and financial data from Aiven MySQL HealthCare_THP"
+    database: HEALTHCARE_DW
+    schema: RAW
+
+    tables:
+      - name: mysql_payer_types
+      - name: mysql_insurance_plans
+      - name: mysql_billing_codes
+      - name: mysql_claim_status_codes
+      - name: mysql_adjustment_codes
+      - name: mysql_claims
+      - name: mysql_claim_lines
+      - name: mysql_payments
+      - name: mysql_adjustments
+      - name: mysql_remittance_advice
+      - name: mysql_claim_status_history
+      - name: mysql_claim_attachments
