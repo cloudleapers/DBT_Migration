@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000" width="1400" height="1000">
+  <defs>
+    <marker id="larrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#888"/>
+    </marker>
+  </defs>
+
+  <text x="700" y="35" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold">Data Lineage — Source to Mart</text>
+  <text x="700" y="58" text-anchor="middle" font-family="Arial" font-size="12" fill="#666">Each box = one dbt model. Arrows show ref() dependencies. dbt builds in this order.</text>
+
+  <!-- COLUMN HEADERS -->
+  <rect x="20" y="80" width="240" height="35" rx="4" fill="#3B82C5"/>
+  <text x="140" y="103" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">SOURCES (RAW)</text>
+
+  <rect x="290" y="80" width="280" height="35" rx="4" fill="#7C3AED"/>
+  <text x="430" y="103" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">STAGING</text>
+
+  <rect x="600" y="80" width="280" height="35" rx="4" fill="#0EA5E9"/>
+  <text x="740" y="103" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">INTERMEDIATE</text>
+
+  <rect x="910" y="80" width="220" height="35" rx="4" fill="#F59E0B"/>
+  <text x="1020" y="103" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">MART (Dim + Fact)</text>
+
+  <rect x="1160" y="80" width="220" height="35" rx="4" fill="#059669"/>
+  <text x="1270" y="103" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#fff">CONSUMERS</text>
+
+  <!-- ============= PATIENT FLOW ============= -->
+  <text x="20" y="145" font-family="Arial" font-size="11" font-weight="bold" fill="#1E40AF">PATIENT FLOW</text>
+
+  <rect x="20" y="155" width="220" height="40" rx="4" fill="#E8F4FD" stroke="#3B82C5"/>
+  <text x="130" y="172" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">PG_PATIENTS</text>
+  <text x="130" y="187" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">5,000 rows</text>
+
+  <rect x="290" y="155" width="260" height="40" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="172" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">stg_pg_patients</text>
+  <text x="420" y="187" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">cleaned, age computed</text>
+
+  <rect x="600" y="155" width="260" height="40" rx="4" fill="#E0F2FE" stroke="#0EA5E9"/>
+  <text x="730" y="172" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">int_patient_demographics</text>
+  <text x="730" y="187" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">+ state, region, age_group</text>
+
+  <rect x="910" y="155" width="200" height="40" rx="4" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text x="1010" y="172" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">dim_patient</text>
+  <text x="1010" y="187" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">5,000 rows · TABLE</text>
+
+  <rect x="1160" y="155" width="220" height="40" rx="4" fill="#F0FDF4" stroke="#059669"/>
+  <text x="1270" y="180" text-anchor="middle" font-family="Arial" font-size="10" fill="#065F46">Patient demographic dashboards</text>
+
+  <line x1="240" y1="175" x2="288" y2="175" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="175" x2="598" y2="175" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="860" y1="175" x2="908" y2="175" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="1110" y1="175" x2="1158" y2="175" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <rect x="20" y="205" width="220" height="32" rx="4" fill="#E8F4FD" stroke="#3B82C5"/>
+  <text x="130" y="225" text-anchor="middle" font-family="Arial" font-size="10">PG_STATES</text>
+
+  <rect x="290" y="205" width="260" height="32" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="225" text-anchor="middle" font-family="Arial" font-size="10">stg_pg_states</text>
+
+  <line x1="240" y1="221" x2="288" y2="221" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="221" x2="598" y2="221" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <!-- ============= ENCOUNTER FLOW ============= -->
+  <text x="20" y="280" font-family="Arial" font-size="11" font-weight="bold" fill="#1E40AF">ENCOUNTER FLOW</text>
+
+  <rect x="20" y="290" width="220" height="40" rx="4" fill="#E8F4FD" stroke="#3B82C5"/>
+  <text x="130" y="307" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">PG_ENCOUNTERS</text>
+  <text x="130" y="321" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">20,000 rows</text>
+
+  <rect x="20" y="340" width="220" height="32" rx="4" fill="#E8F4FD" stroke="#3B82C5"/>
+  <text x="130" y="361" text-anchor="middle" font-family="Arial" font-size="10">PG_ENCOUNTER_DIAGNOSES</text>
+
+  <rect x="20" y="382" width="220" height="32" rx="4" fill="#E8F4FD" stroke="#3B82C5"/>
+  <text x="130" y="403" text-anchor="middle" font-family="Arial" font-size="10">PG_ENCOUNTER_PROCEDURES</text>
+
+  <rect x="290" y="290" width="260" height="40" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="307" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">stg_pg_encounters</text>
+  <text x="420" y="321" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">+ is_acute_visit flag</text>
+
+  <rect x="290" y="340" width="260" height="32" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="361" text-anchor="middle" font-family="Arial" font-size="10">stg_pg_encounter_diagnoses</text>
+
+  <rect x="290" y="382" width="260" height="32" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="403" text-anchor="middle" font-family="Arial" font-size="10">stg_pg_encounter_procedures</text>
+
+  <rect x="600" y="320" width="260" height="55" rx="4" fill="#E0F2FE" stroke="#0EA5E9"/>
+  <text x="730" y="340" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">int_encounter_full</text>
+  <text x="730" y="356" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">rolls up dx + procs per encounter</text>
+  <text x="730" y="368" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">total_diagnoses, total_procedures</text>
+
+  <line x1="240" y1="310" x2="288" y2="310" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="240" y1="356" x2="288" y2="356" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="240" y1="398" x2="288" y2="398" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <line x1="550" y1="310" x2="598" y2="335" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="356" x2="598" y2="350" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="398" x2="598" y2="365" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <!-- ============= CLAIM FLOW ============= -->
+  <text x="20" y="450" font-family="Arial" font-size="11" font-weight="bold" fill="#0F6E56">CLAIM FLOW</text>
+
+  <rect x="20" y="460" width="220" height="40" rx="4" fill="#D1FAE5" stroke="#1D9E75"/>
+  <text x="130" y="477" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">MYSQL_CLAIMS</text>
+  <text x="130" y="491" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">30,000 rows</text>
+
+  <rect x="20" y="510" width="220" height="32" rx="4" fill="#D1FAE5" stroke="#1D9E75"/>
+  <text x="130" y="531" text-anchor="middle" font-family="Arial" font-size="10">MYSQL_PAYMENTS</text>
+
+  <rect x="20" y="552" width="220" height="32" rx="4" fill="#D1FAE5" stroke="#1D9E75"/>
+  <text x="130" y="573" text-anchor="middle" font-family="Arial" font-size="10">MYSQL_ADJUSTMENTS</text>
+
+  <rect x="20" y="594" width="220" height="32" rx="4" fill="#D1FAE5" stroke="#1D9E75"/>
+  <text x="130" y="615" text-anchor="middle" font-family="Arial" font-size="10">MYSQL_INSURANCE_PLANS</text>
+
+  <rect x="290" y="460" width="260" height="40" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="477" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">stg_mysql_claims</text>
+  <text x="420" y="491" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">+ days_to_submit, payment_ratio</text>
+
+  <rect x="290" y="510" width="260" height="32" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="530" text-anchor="middle" font-family="Arial" font-size="10">stg_mysql_payments</text>
+
+  <rect x="290" y="552" width="260" height="32" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="572" text-anchor="middle" font-family="Arial" font-size="10">stg_mysql_adjustments</text>
+
+  <rect x="290" y="594" width="260" height="32" rx="4" fill="#F3F0FA" stroke="#7C3AED"/>
+  <text x="420" y="614" text-anchor="middle" font-family="Arial" font-size="10">stg_mysql_insurance_plans</text>
+
+  <rect x="600" y="450" width="260" height="55" rx="4" fill="#E0F2FE" stroke="#0EA5E9"/>
+  <text x="730" y="470" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">int_claim_with_provider</text>
+  <text x="730" y="486" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">claims + provider + plan + status</text>
+  <text x="730" y="498" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">enriched dimension lookups</text>
+
+  <rect x="600" y="520" width="260" height="55" rx="4" fill="#E0F2FE" stroke="#0EA5E9"/>
+  <text x="730" y="540" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">int_claim_financials</text>
+  <text x="730" y="556" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">aggregated payments + adjustments</text>
+  <text x="730" y="568" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">payment_status_category</text>
+
+  <rect x="600" y="590" width="260" height="55" rx="4" fill="#E0F2FE" stroke="#0EA5E9"/>
+  <text x="730" y="610" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">int_payment_reconciliation</text>
+  <text x="730" y="626" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">payment vs charge variance</text>
+  <text x="730" y="638" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">reconciliation_status</text>
+
+  <line x1="240" y1="480" x2="288" y2="480" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="240" y1="526" x2="288" y2="526" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="240" y1="568" x2="288" y2="568" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="240" y1="610" x2="288" y2="610" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <line x1="550" y1="480" x2="598" y2="475" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="526" x2="598" y2="540" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="568" x2="598" y2="555" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="550" y1="610" x2="598" y2="615" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <!-- ============= BRIDGE MODEL ============= -->
+  <rect x="600" y="690" width="260" height="55" rx="4" fill="#FEE2E2" stroke="#DC2626" stroke-width="2"/>
+  <text x="730" y="710" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#991B1B">int_encounter_with_claim</text>
+  <text x="730" y="726" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">★ BRIDGE — clinical + financial</text>
+  <text x="730" y="738" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">used by fct_encounter</text>
+
+  <line x1="730" y1="375" x2="730" y2="688" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#larrow)"/>
+  <line x1="730" y1="505" x2="600" y2="715" stroke="#DC2626" stroke-width="1" stroke-dasharray="3,2" marker-end="url(#larrow)"/>
+
+  <!-- ============= MARTS ============= -->
+  <rect x="910" y="290" width="200" height="40" rx="4" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text x="1010" y="310" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">fct_encounter</text>
+  <text x="1010" y="324" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">20,000 rows · TABLE</text>
+
+  <rect x="910" y="460" width="200" height="40" rx="4" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text x="1010" y="480" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">fct_claim</text>
+  <text x="1010" y="494" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">30,000 rows · TABLE</text>
+
+  <rect x="910" y="600" width="200" height="40" rx="4" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text x="1010" y="620" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">fct_payment</text>
+  <text x="1010" y="634" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">15,000 rows · TABLE</text>
+
+  <rect x="910" y="690" width="200" height="40" rx="4" fill="#FEF3C7" stroke="#F59E0B"/>
+  <text x="1010" y="710" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold">dim_payer</text>
+  <text x="1010" y="724" text-anchor="middle" font-family="Arial" font-size="9" fill="#666">25 rows · TABLE</text>
+
+  <line x1="860" y1="345" x2="908" y2="310" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="860" y1="475" x2="908" y2="475" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="860" y1="617" x2="908" y2="617" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="860" y1="715" x2="908" y2="708" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <!-- BI consumers -->
+  <rect x="1160" y="290" width="220" height="40" rx="4" fill="#F0FDF4" stroke="#059669"/>
+  <text x="1270" y="316" text-anchor="middle" font-family="Arial" font-size="10" fill="#065F46">Encounter analytics dashboard</text>
+
+  <rect x="1160" y="460" width="220" height="40" rx="4" fill="#F0FDF4" stroke="#059669"/>
+  <text x="1270" y="486" text-anchor="middle" font-family="Arial" font-size="10" fill="#065F46">Claim aging / collections report</text>
+
+  <rect x="1160" y="600" width="220" height="40" rx="4" fill="#F0FDF4" stroke="#059669"/>
+  <text x="1270" y="626" text-anchor="middle" font-family="Arial" font-size="10" fill="#065F46">Payment reconciliation reports</text>
+
+  <line x1="1110" y1="310" x2="1158" y2="310" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="1110" y1="480" x2="1158" y2="480" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+  <line x1="1110" y1="620" x2="1158" y2="620" stroke="#888" stroke-width="1.5" marker-end="url(#larrow)"/>
+
+  <!-- LEGEND -->
+  <rect x="20" y="800" width="1360" height="170" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="35" y="825" font-family="Arial" font-size="13" font-weight="bold" fill="#475569">How to read this lineage</text>
+  <text x="35" y="847" font-family="Arial" font-size="11" fill="#444">  •  Each box represents one dbt model (or source table for the leftmost column).</text>
+  <text x="35" y="865" font-family="Arial" font-size="11" fill="#444">  •  Arrows show the {{ ref() }} or {{ source() }} dependencies dbt resolves automatically.</text>
+  <text x="35" y="883" font-family="Arial" font-size="11" fill="#444">  •  dbt builds models in dependency order — sources first, then staging, then intermediate, then marts.</text>
+  <text x="35" y="901" font-family="Arial" font-size="11" fill="#444">  •  The red dashed BRIDGE box (int_encounter_with_claim) is the join point between clinical and financial domains.</text>
+  <text x="35" y="921" font-family="Arial" font-size="11" fill="#444">  •  STAGING + INTERMEDIATE materialize as views (cheap to recompute). MART materializes as tables (pre-computed for fast BI queries).</text>
+  <text x="35" y="941" font-family="Arial" font-size="11" fill="#444">  •  This is a partial lineage — full project has 48 models. Run `dbt docs serve` for the interactive complete lineage graph.</text>
+  <text x="35" y="961" font-family="Arial" font-size="11" fill="#444">  •  For deeper drill-down, check docs/03_DATA_LINEAGE.md which lists every model and its upstream / downstream dependencies.</text>
+</svg>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" width="1200" height="800">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#555"/>
+    </marker>
+    <linearGradient id="sourceGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8F4FD"/>
+      <stop offset="100%" stop-color="#C5E1F8"/>
+    </linearGradient>
+    <linearGradient id="loaderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFF3CD"/>
+      <stop offset="100%" stop-color="#FFE69C"/>
+    </linearGradient>
+    <linearGradient id="snowGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFE5E5"/>
+      <stop offset="100%" stop-color="#FFCDD2"/>
+    </linearGradient>
+    <linearGradient id="dbtGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E1D5F5"/>
+      <stop offset="100%" stop-color="#C9B6E8"/>
+    </linearGradient>
+  </defs>
+
+  <text x="600" y="35" text-anchor="middle" font-family="Arial" font-size="22" font-weight="bold" fill="#222">Healthcare Data Platform — End-to-End Architecture</text>
+  <text x="600" y="58" text-anchor="middle" font-family="Arial" font-size="13" fill="#666">PostgreSQL + MySQL → Python ELT → Snowflake → dbt Models → Analytics</text>
+
+  <!-- SOURCE LAYER -->
+  <rect x="40" y="90" width="280" height="290" rx="10" fill="url(#sourceGrad)" stroke="#3B82C5" stroke-width="2"/>
+  <text x="180" y="115" text-anchor="middle" font-family="Arial" font-size="15" font-weight="bold" fill="#1E40AF">SOURCE SYSTEMS</text>
+
+  <rect x="60" y="135" width="240" height="105" rx="6" fill="#fff" stroke="#3B82C5"/>
+  <text x="180" y="158" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#1E40AF">PostgreSQL (Supabase)</text>
+  <text x="180" y="178" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Clinical Domain</text>
+  <text x="180" y="196" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">18 Tables · 12 Views</text>
+  <text x="180" y="212" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">5,000 patients · 20K encounters</text>
+  <text x="180" y="228" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Patients, Providers, Diagnoses, Procedures</text>
+
+  <rect x="60" y="255" width="240" height="105" rx="6" fill="#fff" stroke="#1D9E75"/>
+  <text x="180" y="278" text-anchor="middle" font-family="Arial" font-size="13" font-weight="bold" fill="#0F6E56">MySQL (Aiven)</text>
+  <text x="180" y="298" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">Financial Domain</text>
+  <text x="180" y="316" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">12 Tables · 13 Views</text>
+  <text x="180" y="332" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">30K claims · 45K lines · 15K payments</text>
+  <text x="180" y="348" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Claims, Payments, Adjustments</text>
+
+  <!-- LOADER LAYER -->
+  <rect x="370" y="190" width="180" height="95" rx="10" fill="url(#loaderGrad)" stroke="#D97706" stroke-width="2"/>
+  <text x="460" y="218" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#854F0B">PYTHON ELT</text>
+  <text x="460" y="240" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">load_sources.py</text>
+  <text x="460" y="258" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">SQLAlchemy + pandas</text>
+  <text x="460" y="274" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Daily extract / load</text>
+
+  <line x1="320" y1="187" x2="368" y2="220" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+  <line x1="320" y1="307" x2="368" y2="255" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- SNOWFLAKE WAREHOUSE -->
+  <rect x="600" y="90" width="560" height="600" rx="12" fill="url(#snowGrad)" stroke="#DC2626" stroke-width="2"/>
+  <text x="880" y="115" text-anchor="middle" font-family="Arial" font-size="16" font-weight="bold" fill="#991B1B">SNOWFLAKE — HEALTHCARE_DW</text>
+  <text x="880" y="135" text-anchor="middle" font-family="Arial" font-size="11" fill="#666">Cloud Data Warehouse · Single source of truth · All dbt processing here</text>
+
+  <!-- RAW SCHEMA -->
+  <rect x="620" y="155" width="520" height="95" rx="8" fill="#fff" stroke="#888"/>
+  <text x="640" y="180" font-family="Arial" font-size="13" font-weight="bold" fill="#444">RAW Schema</text>
+  <text x="640" y="200" font-family="Arial" font-size="10" fill="#666">30 tables — landed exactly as extracted from sources</text>
+  <text x="640" y="218" font-family="Arial" font-size="10" fill="#666">PG_PATIENTS, PG_ENCOUNTERS, MYSQL_CLAIMS, MYSQL_PAYMENTS …</text>
+  <text x="640" y="236" font-family="Arial" font-size="10" fill="#666">311,178 total rows · No transformations</text>
+
+  <line x1="552" y1="237" x2="618" y2="200" stroke="#555" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- DBT MODELS BLOCK -->
+  <rect x="620" y="270" width="520" height="400" rx="8" fill="url(#dbtGrad)" stroke="#7C3AED" stroke-width="2"/>
+  <text x="880" y="295" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#5B21B6">dbt Core — Transformation Engine</text>
+  <text x="880" y="312" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">48 models · 80+ tests · Auto lineage · Documentation</text>
+
+  <!-- STAGING -->
+  <rect x="640" y="328" width="480" height="65" rx="6" fill="#fff" stroke="#7C3AED"/>
+  <text x="660" y="350" font-family="Arial" font-size="12" font-weight="bold" fill="#5B21B6">STAGING (30 views)</text>
+  <text x="660" y="368" font-family="Arial" font-size="10" fill="#666">stg_pg_* (18) and stg_mysql_* (12)</text>
+  <text x="660" y="384" font-family="Arial" font-size="10" fill="#666">Rename, type-cast, basic cleanup, metadata columns</text>
+
+  <!-- INTERMEDIATE -->
+  <rect x="640" y="403" width="480" height="65" rx="6" fill="#fff" stroke="#7C3AED"/>
+  <text x="660" y="425" font-family="Arial" font-size="12" font-weight="bold" fill="#5B21B6">INTERMEDIATE (8 views)</text>
+  <text x="660" y="443" font-family="Arial" font-size="10" fill="#666">int_patient_demographics, int_encounter_with_claim, int_claim_financials …</text>
+  <text x="660" y="459" font-family="Arial" font-size="10" fill="#666">Joins clinical + financial domains. Business logic. Aggregations.</text>
+
+  <!-- MART -->
+  <rect x="640" y="478" width="480" height="180" rx="6" fill="#fff" stroke="#7C3AED"/>
+  <text x="660" y="500" font-family="Arial" font-size="12" font-weight="bold" fill="#5B21B6">MART — Star Schema (10 tables)</text>
+
+  <rect x="660" y="515" width="220" height="60" rx="4" fill="#E0F2FE" stroke="#0284C7"/>
+  <text x="770" y="535" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#075985">DIMENSIONS (7)</text>
+  <text x="770" y="551" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">dim_patient · dim_provider · dim_payer</text>
+  <text x="770" y="565" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">dim_facility · dim_diagnosis · dim_procedure · dim_date</text>
+
+  <rect x="890" y="515" width="220" height="60" rx="4" fill="#FEF3C7" stroke="#D97706"/>
+  <text x="1000" y="535" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#92400E">FACTS (3)</text>
+  <text x="1000" y="551" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">fct_encounter — clinical visits</text>
+  <text x="1000" y="565" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">fct_claim — claims · fct_payment — payments</text>
+
+  <rect x="660" y="585" width="450" height="60" rx="4" fill="#F0FDF4" stroke="#059669"/>
+  <text x="885" y="605" text-anchor="middle" font-family="Arial" font-size="11" font-weight="bold" fill="#065F46">QUALITY + DOCUMENTATION</text>
+  <text x="885" y="620" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">80+ automated tests (not_null, unique, relationships, accepted_values)</text>
+  <text x="885" y="635" text-anchor="middle" font-family="Arial" font-size="9" fill="#444">Auto-generated docs · Lineage graph · Column-level tracking</text>
+
+  <!-- INTERNAL FLOW ARROWS -->
+  <line x1="880" y1="252" x2="880" y2="325" stroke="#555" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arrow)"/>
+  <line x1="880" y1="395" x2="880" y2="400" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="880" y1="470" x2="880" y2="475" stroke="#555" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- BI / OUTPUT -->
+  <rect x="40" y="540" width="280" height="130" rx="10" fill="#F0FDF4" stroke="#059669" stroke-width="2"/>
+  <text x="180" y="565" text-anchor="middle" font-family="Arial" font-size="14" font-weight="bold" fill="#065F46">CONSUMERS</text>
+  <text x="180" y="588" text-anchor="middle" font-family="Arial" font-size="11" fill="#555">BI Tools / Dashboards</text>
+  <text x="180" y="608" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Tableau · Power BI · Looker</text>
+  <text x="180" y="628" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Direct SQL via Snowflake worksheet</text>
+  <text x="180" y="648" text-anchor="middle" font-family="Arial" font-size="10" fill="#666">Embedded analytics</text>
+
+  <line x1="618" y1="555" x2="320" y2="610" stroke="#059669" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#arrow)"/>
+  <text x="450" y="580" font-family="Arial" font-size="10" fill="#065F46" font-style="italic">SQL queries against MART</text>
+
+  <!-- LEGEND BOX -->
+  <rect x="40" y="700" width="1120" height="80" rx="8" fill="#F8FAFC" stroke="#CBD5E1"/>
+  <text x="55" y="725" font-family="Arial" font-size="12" font-weight="bold" fill="#475569">Daily Operating Cycle</text>
+  <text x="55" y="745" font-family="Arial" font-size="11" fill="#555">  1 · python load_sources.py → extracts from PG + MySQL, lands data into Snowflake RAW</text>
+  <text x="55" y="761" font-family="Arial" font-size="11" fill="#555">  2 · dbt run → builds all 48 models in dependency order (staging → intermediate → marts)</text>
+  <text x="55" y="773" font-family="Arial" font-size="11" fill="#555">  3 · dbt test → validates 80+ data quality assertions before downstream consumption</text>
+</svg>
