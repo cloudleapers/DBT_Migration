@@ -26741,3 +26741,262 @@ having count(*) > 1
 [0m11:56:43.244429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002121C23EA50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002121C211340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002121AC8FF50>]}
 [0m11:56:43.244429 [debug] [MainThread]: An error was encountered while trying to send an event
 [0m11:56:43.245425 [debug] [MainThread]: Flushing usage events
+[0m08:09:20.379001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E7726930>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E7724DA0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E6250290>]}
+[0m08:09:20.387318 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 08:09:20.388316 | 82d5782c-ad82-4853-b7d4-3f06938a8d23 ==============================
+[0m08:09:20.388316 [info ] [MainThread]: Running with dbt=1.11.9
+[0m08:09:20.388316 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Dell\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt ', 'use_experimental_parser': 'False', 'log_path': 'c:\\KOMHAR\\Workspace\\dbt_Workspace\\healthcare_dbt\\logs'}
+[0m08:09:20.735723 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '82d5782c-ad82-4853-b7d4-3f06938a8d23', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E881CB00>]}
+[0m08:09:20.736731 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m08:09:20.910728 [debug] [MainThread]: Set downloads directory='C:\Users\Dell\AppData\Local\Temp\dbt-downloads-l18luq01'
+[0m08:09:20.910728 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m08:09:22.503187 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m08:09:22.505327 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m08:09:23.384385 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m08:09:23.390895 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m08:09:25.073748 [info ] [MainThread]: Installed from version 1.3.3
+[0m08:09:25.074756 [info ] [MainThread]: Up to date!
+[0m08:09:25.075764 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '82d5782c-ad82-4853-b7d4-3f06938a8d23', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E10BB800>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E8964F20>]}
+[0m08:09:25.075764 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m08:09:25.078791 [debug] [MainThread]: Command `cli deps` succeeded at 08:09:25.077781 after 4.95 seconds
+[0m08:09:25.078791 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E6C419A0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E3B3EAB0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000002A8E8B68AD0>]}
+[0m08:09:25.079828 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m08:09:25.079828 [debug] [MainThread]: Flushing usage events
+[0m08:44:45.823651 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025210229400>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025212C10890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x00000252128F6720>]}
+[0m08:44:45.832902 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 08:44:45.832902 | 2e3b33c7-98af-4267-8668-8774447c6d20 ==============================
+[0m08:44:45.832902 [info ] [MainThread]: Running with dbt=1.11.9
+[0m08:44:45.832902 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Dell\\.dbt', 'indirect_selection': 'eager', 'use_colors': 'True', 'invocation_command': 'dbt debug', 'use_experimental_parser': 'False', 'log_path': 'C:\\KOMHAR\\Workspace\\dbt_Workspace\\healthcare_dbt\\logs'}
+[0m08:44:45.863708 [info ] [MainThread]: dbt version: 1.11.9
+[0m08:44:45.863708 [info ] [MainThread]: python version: 3.12.7
+[0m08:44:45.863708 [info ] [MainThread]: python path: C:\KOMHAR\Workspace\dbt_Workspace\healthcare_dbt\dbt_env\Scripts\python.exe
+[0m08:44:45.863708 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m08:44:46.938477 [debug] [MainThread]: Snowflake adapter: Setting snowflake.connector to ERROR (file logging only)
+[0m08:44:46.938477 [debug] [MainThread]: Snowflake adapter: Setting botocore to ERROR (file logging only)
+[0m08:44:46.938477 [debug] [MainThread]: Snowflake adapter: Setting boto3 to ERROR (file logging only)
+[0m08:44:47.029412 [info ] [MainThread]: Using profiles dir at C:\Users\Dell\.dbt
+[0m08:44:47.029412 [info ] [MainThread]: Using profiles.yml file at C:\Users\Dell\.dbt\profiles.yml
+[0m08:44:47.029412 [info ] [MainThread]: Using dbt_project.yml file at C:\KOMHAR\Workspace\dbt_Workspace\healthcare_dbt\dbt_project.yml
+[0m08:44:47.029412 [info ] [MainThread]: adapter type: snowflake
+[0m08:44:47.029412 [info ] [MainThread]: adapter version: 1.11.4
+[0m08:44:47.198070 [info ] [MainThread]: Configuration:
+[0m08:44:47.215083 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:44:47.215083 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:44:47.215083 [info ] [MainThread]: Required dependencies:
+[0m08:44:47.215083 [debug] [MainThread]: Executing "git --help"
+[0m08:44:47.284229 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:44:47.285270 [debug] [MainThread]: STDERR: "b''"
+[0m08:44:47.285270 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:44:47.286293 [info ] [MainThread]: Connection:
+[0m08:44:47.286293 [info ] [MainThread]:   account: WWLAZGI-XZ78250
+[0m08:44:47.287621 [info ] [MainThread]:   user: CLOUDLEAPERS
+[0m08:44:47.287621 [info ] [MainThread]:   database: HEALTHCARE_DW
+[0m08:44:47.288627 [info ] [MainThread]:   warehouse: COMPUTE_WH
+[0m08:44:47.288627 [info ] [MainThread]:   role: ACCOUNTADMIN
+[0m08:44:47.288627 [info ] [MainThread]:   schema: RAW
+[0m08:44:47.289633 [info ] [MainThread]:   authenticator: None
+[0m08:44:47.289633 [info ] [MainThread]:   oauth_client_id: None
+[0m08:44:47.290638 [info ] [MainThread]:   query_tag: healthcare_dbt_dev
+[0m08:44:47.290638 [info ] [MainThread]:   client_session_keep_alive: False
+[0m08:44:47.291726 [info ] [MainThread]:   host: None
+[0m08:44:47.291726 [info ] [MainThread]:   port: None
+[0m08:44:47.293032 [info ] [MainThread]:   proxy_host: None
+[0m08:44:47.293032 [info ] [MainThread]:   proxy_port: None
+[0m08:44:47.294091 [info ] [MainThread]:   protocol: None
+[0m08:44:47.294091 [info ] [MainThread]:   connect_retries: 1
+[0m08:44:47.295330 [info ] [MainThread]:   connect_timeout: None
+[0m08:44:47.296554 [info ] [MainThread]:   retry_on_database_errors: False
+[0m08:44:47.296554 [info ] [MainThread]:   retry_all: False
+[0m08:44:47.297559 [info ] [MainThread]:   insecure_mode: False
+[0m08:44:47.298787 [info ] [MainThread]:   reuse_connections: True
+[0m08:44:47.298787 [info ] [MainThread]:   s3_stage_vpce_dns_name: None
+[0m08:44:47.299790 [info ] [MainThread]:   platform_detection_timeout_seconds: 0.0
+[0m08:44:47.301049 [info ] [MainThread]: Registered adapter: snowflake=1.11.4
+[0m08:44:47.989462 [debug] [MainThread]: Acquiring new snowflake connection 'debug'
+[0m08:44:51.168643 [debug] [MainThread]: Using snowflake connection "debug"
+[0m08:44:51.168643 [debug] [MainThread]: On debug: select 1 as id
+[0m08:44:51.168643 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:44:53.827251 [debug] [MainThread]: SQL status: SUCCESS 1 in 2.650 seconds
+[0m08:44:53.831432 [info ] [MainThread]:   Connection test: [[32mOK connection ok[0m]
+
+[0m08:44:53.834598 [info ] [MainThread]: [32mAll checks passed![0m
+[0m08:44:53.839522 [debug] [MainThread]: Command `dbt debug` succeeded at 08:44:53.839522 after 8.16 seconds
+[0m08:44:53.841583 [debug] [MainThread]: Connection 'debug' was left open.
+[0m08:44:53.843643 [debug] [MainThread]: On debug: Close
+[0m08:44:54.066728 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025212FDF860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025226EC49B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000025224FD4710>]}
+[0m08:44:54.066728 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m08:44:54.066728 [debug] [MainThread]: Flushing usage events
+[0m08:58:55.467297 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001317BFD0830>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001317C406FF0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000013179ACF890>]}
+[0m08:58:55.472241 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 08:58:55.473293 | f1b08f89-ca6f-4d5b-95cb-78e32385eae1 ==============================
+[0m08:58:55.473293 [info ] [MainThread]: Running with dbt=1.11.9
+[0m08:58:55.474291 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'printer_width': '80', 'write_json': 'True', 'introspect': 'True', 'log_cache_events': 'False', 'empty': 'None', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'partial_parse': 'True', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'profiles_dir': 'C:\\Users\\Dell\\.dbt', 'invocation_command': 'dbt debug --target postgres_source', 'indirect_selection': 'eager', 'use_colors': 'True', 'use_experimental_parser': 'False', 'log_path': 'C:\\KOMHAR\\Workspace\\dbt_Workspace\\healthcare_dbt\\logs'}
+[0m08:58:55.508009 [info ] [MainThread]: dbt version: 1.11.9
+[0m08:58:55.508009 [info ] [MainThread]: python version: 3.12.7
+[0m08:58:55.508009 [info ] [MainThread]: python path: C:\KOMHAR\Workspace\dbt_Workspace\healthcare_dbt\dbt_env\Scripts\python.exe
+[0m08:58:55.509296 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m08:58:55.745303 [info ] [MainThread]: Using profiles dir at C:\Users\Dell\.dbt
+[0m08:58:55.746356 [info ] [MainThread]: Using profiles.yml file at C:\Users\Dell\.dbt\profiles.yml
+[0m08:58:55.747361 [info ] [MainThread]: Using dbt_project.yml file at C:\KOMHAR\Workspace\dbt_Workspace\healthcare_dbt\dbt_project.yml
+[0m08:58:55.748490 [info ] [MainThread]: adapter type: postgres
+[0m08:58:55.749680 [info ] [MainThread]: adapter version: 1.10.0
+[0m08:58:55.911148 [info ] [MainThread]: Configuration:
+[0m08:58:55.912151 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m08:58:55.912151 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m08:58:55.913507 [info ] [MainThread]: Required dependencies:
+[0m08:58:55.914511 [debug] [MainThread]: Executing "git --help"
+[0m08:58:55.976416 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m08:58:55.976416 [debug] [MainThread]: STDERR: "b''"
+[0m08:58:55.977612 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m08:58:55.978615 [info ] [MainThread]: Connection:
+[0m08:58:55.978615 [info ] [MainThread]:   host: aws-1-ap-southeast-1.pooler.supabase.com
+[0m08:58:55.979785 [info ] [MainThread]:   port: 5432
+[0m08:58:55.979785 [info ] [MainThread]:   user: postgres.skgngaeanbttwrvlweyd
+[0m08:58:55.980785 [info ] [MainThread]:   database: postgres
+[0m08:58:55.980785 [info ] [MainThread]:   schema: public
+[0m08:58:55.981782 [info ] [MainThread]:   connect_timeout: 10
+[0m08:58:55.981782 [info ] [MainThread]:   role: None
+[0m08:58:55.982780 [info ] [MainThread]:   search_path: None
+[0m08:58:55.982780 [info ] [MainThread]:   keepalives_idle: 0
+[0m08:58:55.982780 [info ] [MainThread]:   sslmode: require
+[0m08:58:55.984260 [info ] [MainThread]:   sslcert: None
+[0m08:58:55.985319 [info ] [MainThread]:   sslkey: None
+[0m08:58:55.985319 [info ] [MainThread]:   sslrootcert: None
+[0m08:58:55.986329 [info ] [MainThread]:   application_name: dbt
+[0m08:58:55.987334 [info ] [MainThread]:   retries: 1
+[0m08:58:55.988419 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m08:58:56.335896 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m08:58:56.427684 [debug] [MainThread]: Using postgres connection "debug"
+[0m08:58:56.428690 [debug] [MainThread]: On debug: select 1 as id
+[0m08:58:56.428690 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m08:58:57.385795 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "aws-1-ap-southeast-1.pooler.supabase.com" (54.179.210.0), port 5432 failed: FATAL:  (ENOTFOUND) tenant/user postgres.skgngaeanbttwrvlweyd not found
+
+[0m08:58:57.712239 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m08:58:57.714738 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m08:58:57.715755 [debug] [MainThread]: On debug: No close available on handle
+[0m08:58:57.717976 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m08:58:57.720346 [info ] [MainThread]: [31m1 check failed:[0m
+[0m08:58:57.722406 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "aws-1-ap-southeast-1.pooler.supabase.com" (54.179.210.0), port 5432 failed: FATAL:  (ENOTFOUND) tenant/user postgres.skgngaeanbttwrvlweyd not found
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m08:58:57.727813 [debug] [MainThread]: Command `dbt debug` failed at 08:58:57.726704 after 2.48 seconds
+[0m08:58:57.730118 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m08:58:57.731129 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001317C547D40>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001317E00E5D0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001317E00E2A0>]}
+[0m08:58:57.732568 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m08:58:57.733592 [debug] [MainThread]: Flushing usage events
+[0m09:06:11.992683 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020AEC91E0C0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020AEC91C080>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020AEC91C0B0>]}
+[0m09:06:11.996852 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 09:06:11.997929 | f08b5a05-0031-4330-8bc2-1e6d30916482 ==============================
+[0m09:06:11.997929 [info ] [MainThread]: Running with dbt=1.11.9
+[0m09:06:11.998937 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'fail_fast': 'False', 'debug': 'False', 'log_format': 'default', 'profiles_dir': 'C:\\Users\\Dell\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt debug --target postgres_source', 'use_experimental_parser': 'False', 'log_path': 'C:\\KOMHAR\\Workspace\\dbt_Workspace\\healthcare_dbt\\logs'}
+[0m09:06:12.037015 [info ] [MainThread]: dbt version: 1.11.9
+[0m09:06:12.037555 [info ] [MainThread]: python version: 3.12.7
+[0m09:06:12.037555 [info ] [MainThread]: python path: C:\KOMHAR\Workspace\dbt_Workspace\healthcare_dbt\dbt_env\Scripts\python.exe
+[0m09:06:12.038597 [info ] [MainThread]: os info: Windows-11-10.0.26200-SP0
+[0m09:06:12.114897 [info ] [MainThread]: Using profiles dir at C:\Users\Dell\.dbt
+[0m09:06:12.116433 [info ] [MainThread]: Using profiles.yml file at C:\Users\Dell\.dbt\profiles.yml
+[0m09:06:12.116961 [info ] [MainThread]: Using dbt_project.yml file at C:\KOMHAR\Workspace\dbt_Workspace\healthcare_dbt\dbt_project.yml
+[0m09:06:12.118019 [info ] [MainThread]: adapter type: postgres
+[0m09:06:12.119074 [info ] [MainThread]: adapter version: 1.10.0
+[0m09:06:12.268982 [info ] [MainThread]: Configuration:
+[0m09:06:12.269992 [info ] [MainThread]:   profiles.yml file [[32mOK found and valid[0m]
+[0m09:06:12.269992 [info ] [MainThread]:   dbt_project.yml file [[32mOK found and valid[0m]
+[0m09:06:12.271461 [info ] [MainThread]: Required dependencies:
+[0m09:06:12.271461 [debug] [MainThread]: Executing "git --help"
+[0m09:06:12.336966 [debug] [MainThread]: STDOUT: "b"usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]\n           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]\n           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--no-lazy-fetch]\n           [--no-optional-locks] [--no-advice] [--bare] [--git-dir=<path>]\n           [--work-tree=<path>] [--namespace=<name>] [--config-env=<name>=<envvar>]\n           <command> [<args>]\n\nThese are common Git commands used in various situations:\n\nstart a working area (see also: git help tutorial)\n   clone      Clone a repository into a new directory\n   init       Create an empty Git repository or reinitialize an existing one\n\nwork on the current change (see also: git help everyday)\n   add        Add file contents to the index\n   mv         Move or rename a file, a directory, or a symlink\n   restore    Restore working tree files\n   rm         Remove files from the working tree and from the index\n\nexamine the history and state (see also: git help revisions)\n   bisect     Use binary search to find the commit that introduced a bug\n   diff       Show changes between commits, commit and working tree, etc\n   grep       Print lines matching a pattern\n   log        Show commit logs\n   show       Show various types of objects\n   status     Show the working tree status\n\ngrow, mark and tweak your common history\n   backfill   Download missing objects in a partial clone\n   branch     List, create, or delete branches\n   commit     Record changes to the repository\n   history    EXPERIMENTAL: Rewrite history\n   merge      Join two or more development histories together\n   rebase     Reapply commits on top of another base tip\n   reset      Set `HEAD` or the index to a known state\n   switch     Switch branches\n   tag        Create, list, delete or verify tags\n\ncollaborate (see also: git help workflows)\n   fetch      Download objects and refs from another repository\n   pull       Fetch from and integrate with another repository or a local branch\n   push       Update remote refs along with associated objects\n\n'git help -a' and 'git help -g' list available subcommands and some\nconcept guides. See 'git help <command>' or 'git help <concept>'\nto read about a specific subcommand or concept.\nSee 'git help git' for an overview of the system.\n""
+[0m09:06:12.338090 [debug] [MainThread]: STDERR: "b''"
+[0m09:06:12.339244 [info ] [MainThread]:  - git [[32mOK found[0m]
+
+[0m09:06:12.339244 [info ] [MainThread]: Connection:
+[0m09:06:12.340248 [info ] [MainThread]:   host: aws-1-ap-southeast-1.pooler.supabase.com
+[0m09:06:12.340248 [info ] [MainThread]:   port: 5432
+[0m09:06:12.341245 [info ] [MainThread]:   user: postgres.skgngaeanbttwrvlweyd
+[0m09:06:12.341245 [info ] [MainThread]:   database: postgres
+[0m09:06:12.342649 [info ] [MainThread]:   schema: public
+[0m09:06:12.342649 [info ] [MainThread]:   connect_timeout: 10
+[0m09:06:12.343656 [info ] [MainThread]:   role: None
+[0m09:06:12.343656 [info ] [MainThread]:   search_path: None
+[0m09:06:12.343656 [info ] [MainThread]:   keepalives_idle: 0
+[0m09:06:12.344750 [info ] [MainThread]:   sslmode: require
+[0m09:06:12.344750 [info ] [MainThread]:   sslcert: None
+[0m09:06:12.345813 [info ] [MainThread]:   sslkey: None
+[0m09:06:12.346820 [info ] [MainThread]:   sslrootcert: None
+[0m09:06:12.346820 [info ] [MainThread]:   application_name: dbt
+[0m09:06:12.347828 [info ] [MainThread]:   retries: 1
+[0m09:06:12.347828 [info ] [MainThread]: Registered adapter: postgres=1.10.0
+[0m09:06:12.710364 [debug] [MainThread]: Acquiring new postgres connection 'debug'
+[0m09:06:12.802467 [debug] [MainThread]: Using postgres connection "debug"
+[0m09:06:12.802467 [debug] [MainThread]: On debug: select 1 as id
+[0m09:06:12.802467 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m09:06:13.207037 [debug] [MainThread]: Postgres adapter: Got a retryable error when attempting to open a postgres connection.
+1 attempts remaining. Retrying in 0 seconds.
+Error:
+connection to server at "aws-1-ap-southeast-1.pooler.supabase.com" (13.213.241.248), port 5432 failed: FATAL:  (ENOTFOUND) tenant/user postgres.skgngaeanbttwrvlweyd not found
+
+[0m09:06:13.522091 [debug] [MainThread]: Postgres adapter: Error running SQL: select 1 as id
+[0m09:06:13.522091 [debug] [MainThread]: Postgres adapter: Rolling back transaction.
+[0m09:06:13.522091 [debug] [MainThread]: On debug: No close available on handle
+[0m09:06:13.522091 [info ] [MainThread]:   Connection test: [[31mERROR[0m]
+
+[0m09:06:13.523673 [info ] [MainThread]: [31m1 check failed:[0m
+[0m09:06:13.523673 [info ] [MainThread]: dbt was unable to connect to the specified database.
+The database returned the following error:
+
+  >Database Error
+  connection to server at "aws-1-ap-southeast-1.pooler.supabase.com" (13.213.241.248), port 5432 failed: FATAL:  (ENOTFOUND) tenant/user postgres.skgngaeanbttwrvlweyd not found
+  
+
+Check your database credentials and try again. For more information, visit:
+https://docs.getdbt.com/docs/configure-your-profile
+
+
+[0m09:06:13.525817 [debug] [MainThread]: Command `dbt debug` failed at 09:06:13.524856 after 1.76 seconds
+[0m09:06:13.525817 [debug] [MainThread]: Connection 'debug' was properly closed.
+[0m09:06:13.525817 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020AEC84B500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020AEDAF8050>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000020AEC1D9C70>]}
+[0m09:06:13.526814 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m09:06:13.527318 [debug] [MainThread]: Flushing usage events
+[0m09:43:23.466729 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C708A0B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C708A2B10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C708A2B40>]}
+[0m09:43:23.473307 [debug] [MainThread]: An error was encountered while trying to send an event
+
+
+============================== 09:43:23.473307 | 087e6f98-a832-4f08-a622-4008773b557d ==============================
+[0m09:43:23.473307 [info ] [MainThread]: Running with dbt=1.11.9
+[0m09:43:23.474481 [debug] [MainThread]: running dbt with arguments {'static_parser': 'True', 'no_print': 'None', 'version_check': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\Dell\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'invocation_command': 'dbt ', 'indirect_selection': 'eager', 'use_experimental_parser': 'False', 'log_path': 'c:\\KOMHAR\\Workspace\\dbt_Workspace\\healthcare_dbt\\logs'}
+[0m09:43:23.761617 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '087e6f98-a832-4f08-a622-4008773b557d', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C71F73770>]}
+[0m09:43:23.761617 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m09:43:23.904039 [debug] [MainThread]: Set downloads directory='C:\Users\Dell\AppData\Local\Temp\dbt-downloads-utztd37b'
+[0m09:43:23.904039 [debug] [MainThread]: Making package index registry request: GET https://hub.getdbt.com/api/v1/index.json
+[0m09:43:25.170570 [debug] [MainThread]: Response from registry index: GET https://hub.getdbt.com/api/v1/index.json 200
+[0m09:43:25.174013 [debug] [MainThread]: Making package registry request: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json
+[0m09:43:25.996219 [debug] [MainThread]: Response from registry: GET https://hub.getdbt.com/api/v1/dbt-labs/dbt_utils.json 200
+[0m09:43:26.009301 [info ] [MainThread]: Installing dbt-labs/dbt_utils
+[0m09:43:27.981283 [info ] [MainThread]: Installed from version 1.3.3
+[0m09:43:27.982311 [info ] [MainThread]: Up to date!
+[0m09:43:27.984313 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'package', 'label': '087e6f98-a832-4f08-a622-4008773b557d', 'property_': 'install', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C721B2990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C71E98350>]}
+[0m09:43:27.986307 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m09:43:27.989543 [debug] [MainThread]: Command `cli deps` succeeded at 09:43:27.989543 after 4.72 seconds
+[0m09:43:27.990541 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C71FA03B0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C71FA3B00>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x0000022C708C50A0>]}
+[0m09:43:27.991538 [debug] [MainThread]: An error was encountered while trying to send an event
+[0m09:43:27.991538 [debug] [MainThread]: Flushing usage events
