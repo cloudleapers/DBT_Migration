@@ -13,4 +13,4 @@ where category is not null
 	and unit_price>0
 	and cost_price>0
 	and in_stock>=0
-	and initcap(lower(trim(category)))!= 'TEST'
+	and initcap(lower(trim(category)))!= 'Test'
