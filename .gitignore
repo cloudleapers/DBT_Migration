@@ -1,0 +1,10 @@
+.venv
+target/
+dbt_packages/
+logs/
+*.duckdb
+*.duckdb.wal
+.env
+profiles.yml
+~\.dbt/
+~/.dbt/
