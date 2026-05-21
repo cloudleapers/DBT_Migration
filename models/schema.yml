@@ -1,0 +1,104 @@
+version: 2
+
+models:
+  # RAW CUSTOMERS
+  - name: customers
+    description: Raw customers data
+
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+      - name: email
+        tests:
+          - not_null
+
+      - name: signup_date
+        tests:
+          - not_null
+
+      - name: is_active
+        tests:
+          - accepted_values:
+              values: ['Y', 'N']
+
+  # RAW PRODUCTS
+  - name: products
+    description: Raw products data
+
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: category
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+  # RAW ORDERS
+  - name: orders
+    description: Raw orders data
+
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        tests:
+          - not_null
+
+      - name: product_id
+        tests:
+          - not_null
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: order_date
+        tests:
+          - not_null
+          
+  # STAGING CUSTOMERS
+  - name: stg_customers
+    description: Cleaned customer data
+
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+          - unique
+
+      - name: first_name
+        tests:
+          - not_null
+
+      - name: last_name
+        tests:
+          - not_null
+
+      - name: email
+        tests:
+          - not_null
+
+      - name: signup_date
+        tests:
+          - not_null
+
+      - name: is_active
+        tests:
+          - accepted_values:
+              values: ['Y', 'N']
