@@ -1,11 +1,9 @@
 with source as (
-select * from {{ source('raw', 'RAW_ORDERS') }}
-
-),
+select * from {{ source('raw', 'RAW_ORDERS') }}),
 orders_mod  as (
 select
 order_id,
-customer_id,
+trim(customer_id) as customer_id,
 product_id,
 order_date,
 try_cast(quantity as integer) as quantity,

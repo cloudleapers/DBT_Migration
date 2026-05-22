@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: stage
+    database: DBT_PRACTICE
+    schema: STAGING
+
+    tables:
+      - name: cust_stg
+      - name: orders_stg
+      - name: prod_stg
