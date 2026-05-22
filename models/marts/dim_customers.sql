@@ -6,10 +6,5 @@ phone,
 country,
 signup_date,
 is_active,
-case
-    when country = 'India'
-    then 'Domestic'
-    else 'International'
-    end as customer_region,
-    created_at
+created_at
 from {{ source('stage', 'stg_customers') }}
