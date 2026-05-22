@@ -9,3 +9,6 @@ sources:
       - name: RAW_CUSTOMERS
       - name: RAW_ORDERS
       - name: RAW_PRODUCTS
+      - name: CUSTOMERS
+      - name: ORDERS
+      - name: PRODUCTS

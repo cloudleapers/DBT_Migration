@@ -1,20 +1,25 @@
-
- {# {{config(schema = 'STAGING')}} #}
-
 select
 customer_id,
-trim(first_name) AS first_name,
-trim(last_name) AS last_name,
-replace(lower(trim(email)), '@@', '@') as email,
-trim(phone) AS phone,
-upper(trim(country)) AS country,
-replace(signup_date, '/', '-') as signup_date,
+coalesce(trim(first_name), 'N/A') as first_name,
+trim(last_name) as last_name,
+lower(replace(trim(email),'@@','@')) as email,
+coalesce(trim(phone), 'N/A') AS phone,
+initcap(trim(country)) as country,
+
+coalesce(
+        try_to_date(trim(signup_date), 'YYYY-MM-DD'),
+        try_to_date(trim(signup_date), 'YYYY/MM/DD'),
+        try_to_date(trim(signup_date), 'DD-MM-YYYY')
+        ) as signup_date,
 case
     when upper(trim(is_active)) IN ('Y', '1')
     then 'active'
     when upper(trim(is_active)) IN ('N', '0')
     then 'inactive'
-    else 'invalid'
+    else 'N/A'
 end as is_active,
 created_at
-from {{source('raw', 'RAW_CUSTOMERS')}}
+from {{ source('raw', 'CUSTOMERS') }}
+where customer_id is NOT NULL
+and upper(trim(country)) <> 'TEST' 
+and email is NOT NULL
