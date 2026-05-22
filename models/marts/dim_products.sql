@@ -1,9 +1,13 @@
+{{config(
+    materialized='table'
+)}}
 select
     product_id,
     product_name,
     category,
     unit_price,
     cost_price,
-    unit_price - cost_price            as gross_margin,  
-    in_stock
-from {{ ref('stg_products') }}
+    gross_margin,
+    in_stock,
+    created_at
+from {{ source('stg', 'stg_products') }}

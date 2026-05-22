@@ -6,9 +6,12 @@ select
     product_id,
     order_date,
     quantity,
-    unit_price,
+    cast(unit_price as number(10,2)) as unit_price,
     discount_pct,
-    upper(trim(order_status)) as order_status,
+    {{ gross_amount('quantity', 'unit_price') }} as gross_amount,
+    {{ discount_amount('quantity', 'unit_price', 'discount_pct') }} as discount_amount,
+    {{ net_amount('quantity', 'unit_price', 'discount_pct') }} as net_amount,
+    {{ clean_text('order_status') }} as order_status,
     created_at
 
 from {{ source('raw', 'raw_orders') }}

@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: stg            
+    database: DBT_PRACTICE
+    schema: STAGING
+    tables:
+      - name: stg_customers
+      - name: stg_products
+      - name: stg_orders

@@ -5,33 +5,28 @@
 select
     customer_id,
 
-    initcap(trim(first_name)) as first_name,
-    initcap(trim(last_name)) as last_name,
-    lower(trim(replace(email, '@@', '@'))) as email,
-    phone,
-    case
-        when upper(trim(country)) in ('usa', 'us') then 'USA'
-        when upper(trim(country)) = 'uk' then 'UK'
-        else initcap(trim(country))
-    end as country,
-    coalesce(
-        try_to_date(trim(signup_date)::varchar, 'YYYY-MM-DD'),
-        try_to_date(trim(signup_date)::varchar, 'YYYY/MM/DD'),
-        try_to_date(trim(signup_date)::varchar, 'DD-MM-YYYY')
-) as registration_date,
-    case
-        when upper(trim(is_active)) in ('Y', '1') then 'Yes'
-        else 'No'
-    end as is_active,
+    {{ replace_na(clean_text('first_name')) }} as first_name,
+
+    {{ clean_text('last_name') }} as last_name,
+
+    {{ clean_email('email') }} as email,
+
+    {{ replace_na("trim(phone)") }} as phone,
+
+    {{ standardize_country('country') }} as country,
+
+    {{ parse_date('signup_date') }} as registration_date,
+
+    {{ boolean_flag('is_active') }} as is_active,
+
     created_at
 
 from {{ source('raw', 'raw_customers') }}
 
 where customer_id is not null
-  and email like '%@%.%'
-
+    and email like '%@%.%'
 
 qualify row_number() over (
-    partition by lower(trim(email))
+    partition by {{ clean_email('email') }}
     order by created_at desc
 ) = 1
