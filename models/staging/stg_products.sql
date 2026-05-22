@@ -1,8 +1,8 @@
 --stg_products
 select
     product_id,
-    trim(product_name)                              as product_name,
-    initcap(trim(category))                         as category,
+    trim(product_name) as product_name,
+    initcap(trim(category)) as category,
     unit_price,
     cost_price,
     in_stock,
