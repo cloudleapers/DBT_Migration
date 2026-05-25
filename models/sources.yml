@@ -1,0 +1,18 @@
+sources:
+  - name: raw
+    database: DBT_PRACTICE
+    schema: RAW
+
+    tables:
+      - name: RAW_CUSTOMERS
+      - name: RAW_PRODUCTS
+      - name: RAW_ORDERS
+
+  - name: stage
+    database: DBT_PRACTICE
+    schema: STAGING
+
+    tables:
+      - name: stg_customers
+      - name: stg_orders
+      - name: stg_products
