@@ -5,12 +5,13 @@
       target_database='DBT_PRACTICE',
       target_schema='snapshots',
       unique_key='customer_id',
-      
-      strategy='timestamp',
-      updated_at='_loaded_at',
+      strategy='check',
+      check_cols=['first_name', 'last_name', 'email', 'phone', 'country', 'is_active']
     )
 }}
 
 select * from {{ source('raw', 'raw_customers') }}
 
 {% endsnapshot %}
+
+
