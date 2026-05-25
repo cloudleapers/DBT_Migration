@@ -1,0 +1,5 @@
+plan_id,plan_name,tier,tier_rank
+1,Basic Health,BRONZE,1
+2,Premium Health,SILVER,2
+3,Elite Health,GOLD,3
+4,Legacy Plan,BRONZE,1

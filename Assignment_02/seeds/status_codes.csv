@@ -1,0 +1,6 @@
+status_code,status_description,is_final
+SCHEDULED,Appointment booked but not yet seen,false
+COMPLETED,Patient was seen and treated,true
+CANCELLED,Appointment cancelled,true
+NO_SHOW,Patient did not arrive,true
+PENDING,Awaiting confirmation,false
