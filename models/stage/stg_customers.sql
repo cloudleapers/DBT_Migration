@@ -1,25 +1,18 @@
-select
-customer_id,
-coalesce(trim(first_name), 'N/A') as first_name,
-trim(last_name) as last_name,
-lower(replace(trim(email),'@@','@')) as email,
-coalesce(trim(phone), 'N/A') AS phone,
-initcap(trim(country)) as country,
 
-coalesce(
-        try_to_date(trim(signup_date), 'YYYY-MM-DD'),
-        try_to_date(trim(signup_date), 'YYYY/MM/DD'),
-        try_to_date(trim(signup_date), 'DD-MM-YYYY')
-        ) as signup_date,
-case
-    when upper(trim(is_active)) IN ('Y', '1')
-    then 'active'
-    when upper(trim(is_active)) IN ('N', '0')
-    then 'inactive'
-    else 'N/A'
-end as is_active,
-created_at
+select
+    customer_id,
+    {{ clean_text('first_name') }} as first_name,
+    {{ clean_text('last_name') }} as last_name,
+    {{ clean_email('email') }} as email,
+    {{ clean_text('phone') }} as phone,
+    {{ title_case('country') }} as country,
+    {{ format_date('signup_date') }} as signup_date,
+    {{ active_status('is_active') }} as is_active,
+    {{ clean_text('created_at') }} as created_at
 from {{ source('raw', 'CUSTOMERS') }}
-where customer_id is NOT NULL
-and upper(trim(country)) <> 'TEST' 
-and email is NOT NULL
+where {{ not_null('customer_id') }}
+    and {{ filter('country') }} <> 'TEST'
+    and {{ not_null('email') }}
+    and email like '%@%.%'
+qualify row_number() over (partition by {{ clean_email('email') }}order by customer_id) = 1
+order by customer_id asc

@@ -1,17 +1,22 @@
 version: 2
-
 models:
-  # RAW CUSTOMERS
-  - name: customers
-    description: Raw customers data
-
+  - name: stg_customers
     columns:
       - name: customer_id
         tests:
           - not_null
           - unique
 
+      - name: first_name
+        tests:
+          - not_null
+
       - name: email
+        tests:
+          - not_null
+          - unique
+
+      - name: country
         tests:
           - not_null
 
@@ -22,6 +27,69 @@ models:
       - name: is_active
         tests:
           - accepted_values:
-              values: ['Y', 'N']
+              values:
+                - active
+                - inactive
 
-  # RAW PRODUCTS
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        tests:
+          - not_null
+  
+      - name: product_id
+        tests:
+          - not_null
+
+      - name: quantity
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+      - name: discount_pct
+        tests:
+          - not_null
+
+      - name: order_status
+        tests:
+          - accepted_values:
+              values:
+                - COMPLETED
+                - CANCELLED
+                - RETURNED
+                - PENDING
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+      - name: product_name
+        tests:
+          - not_null
+
+      - name: category
+        tests:
+          - not_null
+
+      - name: unit_price
+        tests:
+          - not_null
+
+      - name: cost_price
+        tests:
+          - not_null
+
+      - name: in_stock
+        tests:
+          - not_null

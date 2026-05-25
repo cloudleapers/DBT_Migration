@@ -1,18 +1,19 @@
 select
-order_id,
-customer_id,
-product_id,
-order_date,
-quantity,
-unit_price,
-discount_pct,
-upper(trim(order_status)) as order_status,
-created_at
+    order_id,
+    customer_id,
+    product_id,
+    order_date,
+    quantity,
+    unit_price,
+    discount_pct,
+    {{ filter('order_status') }} as order_status,
+    created_at
 from {{ source('raw', 'ORDERS') }}
-where quantity > 0
-and unit_price > 0
-and discount_pct between 0 and 100
-and order_date is not null
-and customer_id in (select customer_id from {{ source('raw', 'CUSTOMERS') }})
-and product_id in (select product_id from {{ source('raw', 'PRODUCTS') }})
-order by order_id asc 
+where
+    {{ positive_value('quantity') }}
+    and {{ positive_value('unit_price') }}
+    and {{ valid_range('discount_pct', 0, 100) }}
+    and {{ not_null('order_date') }}
+    and {{ valid_fk('customer_id', 'raw', 'CUSTOMERS', 'customer_id') }}
+    and {{ valid_fk('product_id', 'raw', 'PRODUCTS', 'product_id') }}
+order by order_id asc
