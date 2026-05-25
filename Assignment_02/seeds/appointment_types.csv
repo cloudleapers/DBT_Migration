@@ -1,0 +1,5 @@
+type_code,type_description,is_billable
+Consultation,New patient consultation,true
+Follow-up,Follow-up visit,true
+Emergency,Emergency visit,true
+Routine,Routine checkup,false
