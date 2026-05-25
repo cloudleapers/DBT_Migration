@@ -1,5 +1,4 @@
 # pg_to_snowflake.py
-
 import os
 import yaml
 import pandas as pd

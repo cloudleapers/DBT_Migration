@@ -1,4 +1,3 @@
-
 --fct_orders
 select
     order_id,
@@ -9,6 +8,8 @@ select
     quantity,
     unit_price,
     discount_pct,
-    gross_revenue,
+    gross_amount,
+    discount_amount,
+    net_amount,
     gross_profit
 from {{ ref('int_orders_join') }}
