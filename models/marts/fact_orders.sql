@@ -5,15 +5,12 @@
 with orders as (
 select * from {{ source('stage', 'orders_stg') }}
 ),
-
 customers as (
 select * from {{ source('stage', 'cust_stg') }}
 ),
-
 products as (
 select * from {{ source('stage', 'prod_stg') }}
 )
-
 select
     o.order_id,
     o.order_date,
@@ -35,9 +32,6 @@ select
     (p.cost_price * o.quantity)) as gross_profit,
     o.order_status
 from orders o
-
 left join customers c
-    on o.customer_id = c.customer_id
-
-left join products p
-    on o.product_id = p.product_id
+on o.customer_id = c.customer_id left join products p
+on o.product_id = p.product_id
