@@ -18,14 +18,14 @@ filtered AS (
 final AS (
     SELECT
         product_id,
-        TRIM(product_name)                                                  AS name,
-        INITCAP(TRIM(category))                                             AS category,
-        CAST(unit_price AS NUMBER(10,2))                                    AS unit_price,
-        CAST(cost_price AS NUMBER(10,2))                                    AS cost_price,
-        in_stock                                                            AS stock,
+        {{ clean_text('product_name') }}                AS name,
+        {{ clean_text('category') }}                    AS category,
+        {{ to_decimal('unit_price') }}                  AS unit_price,
+        {{ to_decimal('cost_price') }}                  AS cost_price,
+        in_stock                                        AS stock,
         ROUND(
             (unit_price - cost_price) / NULLIF(unit_price, 0) * 100, 2
-        )                                                                   AS margin_pct
+        )                                               AS margin_pct
     FROM filtered
 )
 
