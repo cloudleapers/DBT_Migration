@@ -96,9 +96,6 @@ for table in table_names:
 
     print(f"{target_table} loaded successfully")
 
-# -------------------------
-# CLOSE CONNECTIONS
-# -------------------------
 pg_conn.close()
 sf_engine.dispose()
 

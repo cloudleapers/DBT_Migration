@@ -8,25 +8,27 @@ with cleaned_data as (
 
     select
         customer_id,
-        trim(first_name) as first_name,
-        trim(last_name) as last_name,
-        lower(trim(email)) as email,
-        trim(phone) as phone,
-        initcap(trim(country)) as country,
+        {{ plain_trim('first_name') }} as first_name,
+        {{ plain_trim('last_name') }} as last_name,
+        {{ clean_email('email') }} as email,
+        {{ plain_trim('phone') }} as phone,
+        initcap({{ plain_trim('country') }}) as country,
         try_to_date(signup_date, 'YYYY-MM-DD') as signup_date,
 
         case
-            when upper(trim(is_active)) in ('Y','1') then true
+            when {{ status_fun('is_active') }} = 'True'
+                then true
             else false
         end as is_active,
+
         created_at
 
     from {{ source('raw', 'RAW_CUSTOMERS') }}
 
-    where customer_id is not null
-      and email is not null
-      and trim(email) like '%@%.%'
-      and upper(trim(country)) != 'TEST'
+    where {{ not_null('customer_id') }}
+      and {{ not_null('email') }}
+      and {{ clean_email('email') }} like '%@%.%'
+      and {{ upper_trim('country') }} != 'TEST'
 
 ),
 

@@ -1,0 +1,52 @@
+models:
+
+  - name: stg_customers
+    columns:
+
+      - name: first_name
+        tests:
+          - unique
+          - not_null
+
+      - name: last_name
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+      - name: signup_date
+        tests:
+          - unique
+          - not_null
+
+      - name: email
+        tests:
+          - not_null
+
+  - name: stg_products
+    columns:
+
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+      - name: product_name
+        tests:
+          - not_null
+
+  - name: stg_orders
+    columns:
+
+      - name: order_id
+        tests:
+          - unique
+          - not_null
+        
+      - name: order_date
+        tests:
+          - not_null

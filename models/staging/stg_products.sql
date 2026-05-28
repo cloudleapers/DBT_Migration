@@ -8,8 +8,8 @@ with cleaned_products as (
 
     select
         product_id,
-        trim(product_name) as product_name,
-        initcap(trim(category)) as category,
+        {{ plain_trim('product_name') }} as product_name,
+        initcap({{ plain_trim('category') }}) as category,
         try_cast(unit_price as number(10,2)) as unit_price,
         cost_price,
         in_stock,
@@ -19,15 +19,16 @@ with cleaned_products as (
             / nullif(unit_price, 0) * 100,
             2
         ) as margin_pct,
+
         created_at
 
     from {{ source('raw', 'RAW_PRODUCTS') }}
 
-    where product_id is not null
-      and product_name is not null
+    where {{ not_null('product_id') }}
+      and {{ not_null('product_name') }}
       and unit_price > 0
       and in_stock >= 0
-      and upper(trim(category)) != 'TEST'
+      and {{ upper_trim('category') }} != 'TEST'
 
 )
 

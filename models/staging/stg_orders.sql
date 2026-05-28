@@ -14,7 +14,7 @@ with typed_orders as (
         quantity,
         unit_price,
         discount_pct,
-        upper(trim(order_status)) as order_status
+        {{ upper_trim('order_status') }} as order_status
 
     from {{ source('raw', 'RAW_ORDERS') }}
 
@@ -53,9 +53,10 @@ clean_orders as (
     where quantity > 0
       and unit_price > 0
       and discount_pct between 0 and 100
-      and order_date is not null
+      and {{ not_null('order_date') }}
 
 )
 
 select *
 from clean_orders
+
