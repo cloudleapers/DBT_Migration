@@ -1,11 +1,10 @@
-{{ config(materialized='table', schema='MARTS') }}
 
 SELECT
     product_id,
-    name,             -- aliased from PRODUCT_NAME in stg_products
+    name,             
     category,
     unit_price,
     cost_price,
-    stock,            -- aliased from IN_STOCK in stg_products
+    stock,            
     margin_pct
 FROM {{ ref('stg_products') }}

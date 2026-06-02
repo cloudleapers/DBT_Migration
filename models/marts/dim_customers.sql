@@ -1,4 +1,3 @@
-{{ config(materialized='table', schema='MARTS') }}
 
 SELECT
     customer_id,

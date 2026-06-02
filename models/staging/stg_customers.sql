@@ -1,4 +1,3 @@
-{{ config(materialized='view', schema='STAGING') }}
 
 WITH source AS (
     SELECT * FROM {{ source('raw', 'RAW_CUSTOMERS') }}

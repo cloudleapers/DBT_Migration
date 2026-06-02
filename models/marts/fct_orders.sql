@@ -1,4 +1,3 @@
-{{ config(materialized='table', schema='MARTS') }}
 
 SELECT
     o.order_id,
@@ -14,7 +13,7 @@ SELECT
 
     -- product details
     o.product_id,
-    p.name              AS product_name,      -- 'name' is the alias from stg_products
+    p.name              AS product_name,     
     p.category          AS product_category,
 
     -- order financials
