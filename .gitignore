@@ -1,10 +1,30 @@
-.venv
+# Virtual environments
+.venv/
+
+# dbt build artifacts
 target/
 dbt_packages/
+dbt_internal_packages/
 logs/
+
+# DuckDB files
 *.duckdb
 *.duckdb.wal
+
+# Environment and profiles
 .env
 profiles.yml
-~\.dbt/
+~/.dbt/
 ~/.dbt/git
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Python cache
+__pycache__/
+*.pyc
