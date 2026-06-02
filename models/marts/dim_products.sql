@@ -1,4 +1,3 @@
-
 --dim_products
 select
     product_id,

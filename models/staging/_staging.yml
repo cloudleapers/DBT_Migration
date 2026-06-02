@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: stg_customers
+    description: "Cleansed customer data with standardized emails, countries, and active flags."
+    columns:
+      - name: customer_id
+        description: "Primary key for customers."
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_products
+    columns:
+      - name: product_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_orders
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+          - unique
+      - name: customer_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_customers')
+                field: customer_id
+      - name: product_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('stg_products')
+                field: product_id

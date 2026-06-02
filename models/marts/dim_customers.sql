@@ -1,4 +1,3 @@
-
 --dim_customers
 select
     customer_id,
